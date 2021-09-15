@@ -1,0 +1,28 @@
+import java.io.*; 
+public class tp01q09 {
+	public static void main(String[] args) throws Exception{
+		int quant = MyIO.readInt();
+		RandomAccessFile raf = new RandomAccessFile("exemplo.txt", "rw");  
+
+		for(int i = 0; i < quant; i++) {
+			raf.writeDouble(MyIO.readDouble()); 
+		}
+
+		raf.close();
+
+		RandomAccessFile raff = new RandomAccessFile("exemplo.txt", "r"); 
+
+		long tam = raf.length(); 
+		double aux = 0; 
+
+		raf.seek(tam); 
+
+		for(int j = 0; j < quant; j++) {
+			aux = raf.readDouble();
+		       	MyIO.println(aux); 	
+			raf.seek(tam-8); 
+		}
+
+		raf.close(); 		
+	}
+}

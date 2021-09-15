@@ -1,0 +1,1 @@
+Matricula : 683585	Tempo de execução : 0.0s 	Numero de comparações : 0
